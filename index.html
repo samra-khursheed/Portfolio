@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samra Khursheed | Portfolio</title>  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+    body { background: linear-gradient(135deg, #0f172a, #020617); color: white; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 20px 40px;
+      background: rgba(0,0,0,0.4);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+    }
+
+    @media (max-width: 768px){
+header {
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+    }
+
+    .logo {
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+
+    .logo-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #38bdf8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
+
+    nav a:hover { color: #38bdf8; }
+
+    section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .hero-text { flex: 1; }
+
+    .hero-text h2 { font-size: 32px; margin-bottom: 10px; }
+
+    .hero-text span { color: #38bdf8; }
+
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      color: #38bdf8;
+      border: 3px solid #38bdf8;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 18px;
+      background: #38bdf8;
+      color: black;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover { transform: scale(1.05); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+
+    h2 { margin-bottom: 20px; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+      color: #94a3b8;
+    }
+
+    @media(max-width:768px){
+      .hero { flex-direction: column; text-align: center; }
+    }
+  </style></head>
+  <header>
+    <h1>Samra Khursheed</h1>
+    <p>DAE CIT Final Year Student | Web Developer & Graphic Designer</p>
+</header>
+
+<body><header>
+  <div class="logo">
+    <div class="logo-circle">SK</div>
+    <span>Samra</span>
+  </div>  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header><section class="hero">
+  <div class="hero-text">
+    <h2>Hello, I'm <span>Samra</span></h2>
+    <p>
+      CIT Diploma student with strong academic performance (810/1050, 822/1100).
+      Transitioned from teaching to IT and focused on programming and web development.
+    </p><a href="#" class="btn">Download CV</a>
+
+  </div>  <div class="avatar">SK</div>
+</section><section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am a Computer Information Technology diploma student with a strong focus on web development and programming. I enjoy building practical projects in C, Java, HTML, CSS, and JavaScript. My goal is to improve my skills through real-world projects and pursue international opportunities in technology.
+  </p>
+</section><section id="skills">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card">HTML5</div>
+    <div class="card">CSS3</div>
+    <div class="card">JavaScript(ES6+)</div>
+    <div class="card">C Programming</div>
+    <div class="card">Java</div>
+    <div class="card">
+      <h3>Office and Design</h3>
+      <p>Ms Office (Word, Excel, PowerPoint)</p>
+      <p>Adobe Photoshop & Canva</p>
+    </div>
+  </div>
+</section><section id="projects">
+  <h2>Projects</h2>
+  <div class="grid"><div class="card">
+  <h3>C Calculator</h3>
+  <p>Developed a console-based calculator in C that handles user input, performs arithmetic operations (addition, subtraction, multiplication, division), and includes basic input validation.</p>
+</div>
+
+<div class="card">
+  <h3>Student Grading System</h3>
+  <p>Built a Java-based grading system that takes multiple subject marks as input, calculates total and percentage, and assigns grades based on defined criteria.</p>
+</div>
+
+<div class="card">
+  <h3>Responsive Contact Form</h3>
+  <p>Designed and developed a responsive contact form using HTML and CSS with proper layout structure and user-friendly interface.</p>
+</div>
+
+  </div>
+</section><section id="contact">
+  <h2>Contact</h2>
+  <p>Let’s connect</p>  <div style="display:flex; gap:15px; flex-wrap:wrap; margin-top:10px;">
+    <a href="mailto:dev.samra05@gmail.com" target="_blank" class="btn"> Email</a>
+    <a href="https://github.com/samra-khursheed" target="_blank" class="btn">🐙 GitHub Profile</a>
+  </div>
+</section><footer>
+  <p>© 2026 Samra Khursheed</p>
+</footer></body>
+</html>
