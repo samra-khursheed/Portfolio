@@ -142,26 +142,22 @@
 
     /* PROJECTS */
     #projects { background: var(--warm); }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; }
-    .project-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; position: relative; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+    .project-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; position: relative; display: flex; flex-direction: column; height: 100%; }
     .project-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(0,0,0,0.12); }
-    .project-card.featured { border-color: var(--accent); grid-column: 1 / -1; }
-    .featured-badge { position: absolute; top: 1rem; right: 1rem; background: var(--accent); color: #fff; font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 0.3rem 0.7rem; border-radius: 30px; }
-    .lms-preview { width: 100%; height: 220px; position: relative; overflow: hidden; background: #1a1a2e; border-bottom: 1px solid var(--border); }
-    .lms-preview iframe { width: 160%; height: 160%; transform: scale(0.625); transform-origin: top left; border: none; pointer-events: none; }
+    .project-card.featured { border-color: var(--accent); grid-column: span 1; }
+    .featured-badge { position: absolute; top: 1rem; right: 1rem; background: var(--accent); color: #fff; font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 0.3rem 0.7rem; border-radius: 30px; z-index: 2; }
     
-    .project-featured-inner { display: grid; grid-template-columns: 1fr 1fr; }
-    .project-featured-preview { overflow: hidden; }
-    .project-featured-preview .lms-preview { height: 100%; min-height: 280px; }
-    .project-header { padding: 1.5rem 2rem 0; display: flex; align-items: center; gap: 1rem; }
+    /* Removed LMS preview styles completely */
+    .project-header { padding: 1.5rem 1.8rem 0; display: flex; align-items: center; gap: 1rem; }
     .project-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
     .icon-red{background:rgba(200,80,42,0.12)} .icon-blue{background:rgba(42,107,200,0.12)} .icon-green{background:rgba(42,160,80,0.12)} .icon-purple{background:rgba(130,42,200,0.12)} .icon-orange{background:rgba(200,120,42,0.12)}
     .project-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--ink); }
-    .project-body { padding: 1rem 2rem 1.8rem; }
+    .project-body { padding: 1rem 1.8rem 1.8rem; flex: 1; }
     .project-desc { font-size: 0.92rem; color: var(--muted); margin-bottom: 1.2rem; line-height: 1.6; }
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.3rem; }
     .tag { background: var(--cream); color: var(--muted); border: 1px solid var(--border); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.5px; padding: 0.2rem 0.7rem; border-radius: 30px; }
-    .project-links { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .project-links { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-top: auto; }
     .project-link { display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-size: 0.85rem; font-weight: 600; color: var(--accent); transition: gap 0.2s; }
     .project-link:hover { gap: 0.7rem; }
     .project-link-btn { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--accent); color: #fff; padding: 0.55rem 1.3rem; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: background 0.2s, transform 0.2s; }
@@ -191,9 +187,6 @@
       .hero { padding: 6rem 2rem 3rem; gap: 2rem; }
       section { padding: 5rem 2rem; }
       .about-grid { gap: 3rem; }
-      .project-featured-inner { grid-template-columns: 1fr; }
-      .project-featured-preview { display: none; }
-      .project-card.featured { grid-column: auto; }
     }
     @media (max-width: 768px) {
       .nav-center, .nav-right { display: none; }
@@ -201,7 +194,6 @@
       nav { padding: 1rem 1.5rem; }
       .hero { grid-template-columns: 1fr; padding: 5.5rem 1.5rem 3rem; text-align: center; gap: 2.5rem; }
       .hero-visual { order: -1; }
-      /* AVATAR FIX: constrain so it never overflows circle on mobile */
       .avatar-outer { width: 200px; height: 200px; }
       .avatar-outer svg { width: 200px; height: 200px; }
       .floating-badge { display: none; }
@@ -330,7 +322,7 @@
           <rect x="70" y="272" width="160" height="4" rx="2" fill="#a83e1f" opacity="0.5" clip-path="url(#circleClip)"/>
         </svg>
       </div>
-      <div class="floating-badge badge-lms">🎓 Live LMS Deployed</div>
+      <div class="floating-badge badge-lms">🎓 LMS Deployed</div>
       <div class="floating-badge badge-github">🐙 5 GitHub Projects</div>
     </div>
   </div>
@@ -385,171 +377,4 @@
       <div class="skill-card"><div class="skill-icon">🎨</div><div class="skill-name">CSS3</div></div>
       <div class="skill-card"><div class="skill-icon">⚡</div><div class="skill-name">JavaScript</div></div>
       <div class="skill-card"><div class="skill-icon">🐘</div><div class="skill-name">PHP</div></div>
-      <div class="skill-card"><div class="skill-icon">🗄️</div><div class="skill-name">MySQL</div></div>
-      <div class="skill-card"><div class="skill-icon">☕</div><div class="skill-name">Java</div></div>
-      <div class="skill-card"><div class="skill-icon">⚙️</div><div class="skill-name">C Programming</div></div>
-    </div>
-    <div class="skills-category">
-      <p class="skills-category-title">Tools & Design</p>
-      <div class="skills-grid">
-        <div class="skill-card"><div class="skill-icon">🔧</div><div class="skill-name">XAMPP</div></div>
-        <div class="skill-card"><div class="skill-icon">📊</div><div class="skill-name">MS Office</div></div>
-        <div class="skill-card"><div class="skill-icon">🖼️</div><div class="skill-name">Photoshop</div></div>
-        <div class="skill-card"><div class="skill-icon">✏️</div><div class="skill-name">Canva</div></div>
-        <div class="skill-card"><div class="skill-icon">🐙</div><div class="skill-name">Git & GitHub</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="reveal">
-    <div class="section-label">What I've Built</div>
-    <h2 class="section-title">Projects</h2>
-    <div class="section-line"></div>
-    <div class="projects-grid">
-
-      <!-- LMS FEATURED -->
-      <div class="project-card featured">
-        <div class="featured-badge">Featured</div>
-        <div class="project-featured-inner">
-          <div>
-            <div class="project-header">
-              <div class="project-icon icon-blue">🎓</div>
-              <div class="project-title">College LMS — GPI H-8</div>
-            </div>
-            <div class="project-body">
-              <p class="project-desc">A full-stack Learning Management System built for Govt. Polytechnic Institute H-8, Islamabad. Features role-based dashboards for Admin, Faculty, and Students — with course management, announcements, and attendance tracking. Currently live and in use.</p>
-              <div class="project-tags">
-                <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">HTML</span>
-                <span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Full Stack</span>
-              </div>
-              <div class="project-links">
-                <a href="http://gpi-lms.free.nf" target="_blank" class="project-link-btn">🌐 Live Demo</a>
-                <a href="https://github.com/samra-khursheed/LMS" target="_blank" class="project-link">GitHub →</a>
-              </div>
-            </div>
-          </div>
-          <div class="project-featured-preview">
-            <div class="lms-preview">
-              <iframe src="http://gpi-lms.free.nf" loading="lazy" scrolling="no" title="GPI LMS Preview"></iframe>
-              <div class="lms-preview-overlay"></div>
-              <div class="lms-preview-label">Live Preview</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- C CALCULATOR -->
-      <div class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon icon-red">🔢</div>
-          <div class="project-title">C Calculator</div>
-        </div>
-        <div class="project-body">
-          <p class="project-desc">A console-based calculator in C that handles user input, performs arithmetic operations (addition, subtraction, multiplication, division), and includes basic input validation.</p>
-          <div class="project-tags"><span class="tag">C</span><span class="tag">Console App</span></div>
-          <div class="project-links">
-            <a href="https://github.com/samra-khursheed/c-calculator" target="_blank" class="project-link-btn" style="background:var(--ink);">🐙 GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- GRADING SYSTEM -->
-      <div class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon icon-green">📝</div>
-          <div class="project-title">Student Grading System</div>
-        </div>
-        <div class="project-body">
-          <p class="project-desc">A Java-based grading system that takes multiple subject marks as input, calculates total and percentage, and assigns grades based on defined criteria.</p>
-          <div class="project-tags"><span class="tag">Java</span><span class="tag">OOP</span></div>
-          <div class="project-links">
-            <a href="https://github.com/samra-khursheed/student-grading-system" target="_blank" class="project-link-btn" style="background:var(--ink);">🐙 GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- CONTACT FORM -->
-      <div class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon icon-purple">📬</div>
-          <div class="project-title">Responsive Contact Form</div>
-        </div>
-        <div class="project-body">
-          <p class="project-desc">Designed and developed a responsive contact form using HTML and CSS with proper layout structure, field validation, and a clean user-friendly interface.</p>
-          <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsive</span></div>
-          <div class="project-links">
-            <a href="https://samra-khursheed.github.io/Contact-Form/" target="_blank" class="project-link-btn">🌐 Live Demo</a>
-            <a href="https://github.com/samra-khursheed/contact-form" target="_blank" class="project-link">GitHub →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- QUIZ APP -->
-      <div class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon icon-orange">🧠</div>
-          <div class="project-title">DevQuiz — Interactive Quiz App</div>
-        </div>
-        <div class="project-body">
-          <p class="project-desc">An interactive quiz app with 4 categories (HTML, CSS, JavaScript & GK), timed challenges with 15 seconds per question, real-time progress tracking, instant feedback, and detailed results with score percentage.</p>
-          <div class="project-tags">
-            <span class="tag">HTML</span><span class="tag">CSS</span>
-            <span class="tag">JavaScript</span><span class="tag">ES6+</span>
-          </div>
-          <div class="project-links">
-            <a href="https://samra-khursheed.github.io/QuizApp/" target="_blank" class="project-link-btn">🌐 Live Demo</a>
-            <a href="https://github.com/samra-khursheed/QuizApp" target="_blank" class="project-link">GitHub →</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-label">Let's Talk</div>
-  <h2 class="section-title">Get In Touch</h2>
-  <div class="section-line"></div>
-  <p class="contact-sub">Open to opportunities, collaborations, and conversations about tech & education.</p>
-  <div class="contact-links">
-    <a href="mailto:dev.samra05@gmail.com" class="contact-link email">✉️ dev.samra05@gmail.com</a>
-    <a href="https://github.com/samra-khursheed" target="_blank" class="contact-link github">🐙 github.com/samra-khursheed</a>
-  </div>
-</section>
-
-<footer>© 2026 Samra Khursheed — Built with purpose.</footer>
-
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-  });
-  function closeMenu() {
-    hamburger.classList.remove('open');
-    mobileMenu.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
-  });
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 100);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  revealEls.forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
+      <div class="skill-card"><div class="skill-icon">🗄️</div><
