@@ -106,7 +106,6 @@
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* floating badges */
     .floating-badge {
       position: absolute; background: white; border-radius: 10px; padding: 0.6rem 1rem;
       box-shadow: 0 8px 25px rgba(0,0,0,0.15); font-size: 0.8rem; font-weight: 600;
@@ -140,7 +139,7 @@
     .skills-category { margin-top: 3rem; }
     .skills-category-title { font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
 
-    /* PROJECTS */
+    /* PROJECTS — NO PREVIEW ANYWHERE */
     #projects { background: var(--warm); }
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
     .project-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; position: relative; display: flex; flex-direction: column; height: 100%; }
@@ -148,7 +147,6 @@
     .project-card.featured { border-color: var(--accent); grid-column: span 1; }
     .featured-badge { position: absolute; top: 1rem; right: 1rem; background: var(--accent); color: #fff; font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 0.3rem 0.7rem; border-radius: 30px; z-index: 2; }
     
-    /* Removed LMS preview styles completely */
     .project-header { padding: 1.5rem 1.8rem 0; display: flex; align-items: center; gap: 1rem; }
     .project-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
     .icon-red{background:rgba(200,80,42,0.12)} .icon-blue{background:rgba(42,107,200,0.12)} .icon-green{background:rgba(42,160,80,0.12)} .icon-purple{background:rgba(130,42,200,0.12)} .icon-orange{background:rgba(200,120,42,0.12)}
@@ -180,7 +178,6 @@
 
     @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
 
-    /* RESPONSIVE */
     @media (max-width: 1100px) {
       nav { padding: 1rem 2rem; }
       .nav-email { display: none; }
@@ -221,7 +218,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="navbar">
   <div class="nav-logo">SK</div>
   <ul class="nav-center">
@@ -239,7 +235,6 @@
   </button>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about" onclick="closeMenu()">About</a>
   <a href="#skills" onclick="closeMenu()">Skills</a>
@@ -251,7 +246,6 @@
   </div>
 </div>
 
-<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-text">
     <div class="hero-tag">Available for opportunities</div>
@@ -328,7 +322,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="reveal">
     <div class="section-label">Who I Am</div>
@@ -365,7 +358,6 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="reveal">
     <div class="section-label">What I Know</div>
@@ -376,5 +368,4 @@
       <div class="skill-card"><div class="skill-icon">🌐</div><div class="skill-name">HTML5</div></div>
       <div class="skill-card"><div class="skill-icon">🎨</div><div class="skill-name">CSS3</div></div>
       <div class="skill-card"><div class="skill-icon">⚡</div><div class="skill-name">JavaScript</div></div>
-      <div class="skill-card"><div class="skill-icon">🐘</div><div class="skill-name">PHP</div></div>
-      <div class="skill-card"><div class="skill-icon">🗄️</div><
+      <div class="skill-card"><div class
